@@ -17,5 +17,6 @@ digitalWrite(led, HIGH);
 if (digitalRead(botao2)==1)
 {
 digitalWrite(led, LOW);
+  delay(200);
 }
 }
