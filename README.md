@@ -1,21 +1,29 @@
-This project uses an ESP32 to control an LED using two push buttons.
+# Controle de LED com ESP32 e dois botões
 
- Features
-- Button 1 turns the LED on
-- Button 2 turns the LED off
-- Simple and efficient GPIO control
+Exemplo básico de leitura de botões e controle de uma saída digital. O primeiro botão liga o LED e o segundo desliga.
 
- Technologies Used
-- ESP32
-- Arduino (C/C++)
-- digitalRead() and digitalWrite()
+## Pinos usados
 
- How It Works
-- The ESP32 reads the state of two buttons.  
-- When button 1 is pressed, the LED turns on.  
-- When button 2 is pressed, the LED turns off.
+| Função | GPIO |
+|---|---:|
+| LED | 2 |
+| Botão para ligar | 5 |
+| Botão para desligar | 4 |
 
- Circuit
-<img width="590" height="578" alt="Captura de tela 2026-03-24 080726" src="https://github.com/user-attachments/assets/9b1968c9-d41b-4866-aee0-2ac8dc6c43f0" />
+Use um resistor adequado em série com o LED. Os pinos dos botões estão configurados como `INPUT`; o circuito precisa fornecer um nível lógico definido quando cada botão está solto e pressionado. Confira o esquema antes de montar.
 
+## Como funciona
 
+O programa lê os dois botões continuamente com `digitalRead()`. Quando o botão no GPIO 5 é detectado em nível alto, o LED do GPIO 2 acende. Quando o botão no GPIO 4 é detectado em nível alto, o LED apaga.
+
+O código inclui um atraso de 200 ms depois do comando de desligar. A leitura não implementa tratamento completo de ruído ou debounce.
+
+## Circuito
+
+<img width="590" height="578" alt="Esquema do circuito de controle de LED" src="https://github.com/user-attachments/assets/9b1968c9-d41b-4866-aee0-2ac8dc6c43f0" />
+
+## Executar
+
+1. Abra `sketch_mar24a.ino` na Arduino IDE.
+2. Selecione uma placa ESP32 compatível e a porta correta.
+3. Confira o circuito e envie o programa.
