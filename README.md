@@ -16,6 +16,8 @@ Use um resistor adequado em série com o LED. Os pinos dos botões estão config
 
 O programa lê os dois botões continuamente com `digitalRead()`. Quando o botão no GPIO 5 é detectado em nível alto, o LED do GPIO 2 acende. Quando o botão no GPIO 4 é detectado em nível alto, o LED apaga.
 
+Se os dois botões estiverem em nível alto na mesma iteração, o programa executa primeiro o comando de ligar e depois o de desligar. O LED termina a iteração apagado.
+
 O código inclui um atraso de 200 ms depois do comando de desligar. A leitura não implementa tratamento completo de ruído ou debounce.
 
 ## Circuito
