@@ -26,6 +26,6 @@ O código inclui um atraso de 200 ms depois do comando de desligar. A leitura n�
 
 ## Executar
 
-1. Abra `sketch_mar24a.ino` na Arduino IDE.
+1. Abra `controle_led_botoes.ino` na Arduino IDE.
 2. Selecione uma placa ESP32 compatível e a porta correta.
 3. Confira o circuito e envie o programa.
